@@ -32,10 +32,11 @@ export const getWeatherFromCoords = async (locationObj) => {
       units: locationObj.getUnit()
     };
     try {
-      const weatherStream = await fetch("./.netlify/functions/get_weather", {
-        method: "GET",
-        body: JSON.stringify(urlDataObj)
-      });
+      const weatherStream = await fetch("./.netlify/functions/get_weather"
+      //   method: "GET",
+      //   body: JSON.stringify(urlDataObj)
+      // }
+      );
       const weatherJson = await weatherStream.json();
       return weatherJson;
     } catch (err) {
