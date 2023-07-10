@@ -1,7 +1,7 @@
 
 export const setLocationObject = (locationObj, CoordsObj) =>{
     const {lat, lon, name, unit} = CoordsObj;
-    locationObj.setLat(lat)
+    locationObj.setLat(lat);
     locationObj.setLon(lon);
     locationObj.setName(name);
     if(unit) {
@@ -32,10 +32,10 @@ export const getWeatherFromCoords = async (locationObj) => {
       units: locationObj.getUnit()
     };
     try {
-      const weatherStream = await fetch("./.netlify/functions/get_weather"
-      //   method: "GET",
-      //   body: JSON.stringify(urlDataObj)
-      // }
+      const weatherStream = await fetch("./.netlify/functions/get_weather",{
+        method: "POST",
+        body: JSON.stringify(urlDataObj)
+      }
       );
       const weatherJson = await weatherStream.json();
       return weatherJson;
