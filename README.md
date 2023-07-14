@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Screenshot
 
-(./[Weather App](Weather_App_Screenshot.png))
+([Weather App](Weather_App_Screenshot.png))
 
 
 ## My process
